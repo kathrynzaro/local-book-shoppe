@@ -8,16 +8,18 @@ DROP table if exists authors;
 
 CREATE table authors (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  name VARCHAR NOT NULL
+  name VARCHAR NOT NULL,
+  dob VARCHAR,
+  pob VARCHAR
 );
 
-INSERT into authors (name) VALUES
-('Daphne du Maurier'),
-('Neil Gaiman'),
-('Stephen King'),
-('Isabel Wilkerson'),
-('Victor Hugo'),
-('Erik Larson');
+INSERT into authors (name, dob, pob) VALUES
+('Daphne du Maurier', 'May 13, 1907', 'London, England'),
+('Neil Gaiman', 'November 10, 1960', 'Portchester, Hampshire, England'),
+('Stephen King', 'September 21, 1947', 'Portland, Maine, United States'),
+('Isabel Wilkerson', '1961', 'Washington, D.C., United States'),
+('Victor Hugo', 'February 26, 1802', 'Paris, France'),
+('Erik Larson', 'January 3, 1954', 'Brooklyn, New York, United States');
 
 CREATE table books (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
