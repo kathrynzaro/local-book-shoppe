@@ -18,6 +18,7 @@ describe('books routes', () => {
   
   it('get /:id should return a book with authors', async () => {
     const res = await request(app).get('/books/1');
+    expect(res.status).toBe(200);
     expect(res.body).toEqual({
       id: '1',
       title: 'Rebecca',

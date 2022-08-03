@@ -18,6 +18,7 @@ describe('authors routes', () => {
 
   it('get /:id should return an author with books', async () => {
     const res = await request(app).get('/authors/1');
+    expect(res.status).toBe(200);
     expect(res.body).toEqual({
       id: '1',
       name: 'Daphne du Maurier',
