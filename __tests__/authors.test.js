@@ -14,8 +14,6 @@ describe('authors routes', () => {
     expect(res.body.length).toEqual(6);
     const daphne = res.body.find((author) => author.id === '1');
     expect(daphne).toHaveProperty('name', 'Daphne du Maurier');
-    expect(daphne).toHaveProperty('dob', 'May 13, 1907');
-    expect(daphne).toHaveProperty('pob', 'London, England');
   });
 
   afterAll(() => {
