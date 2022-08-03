@@ -16,6 +16,19 @@ describe('authors routes', () => {
     expect(daphne).toHaveProperty('name', 'Daphne du Maurier');
   });
 
+  it('get /:id should return an author with books', async () => {
+    const res = await request(app).get('/authors/1');
+    expect(res.body).toEqual({
+      id: '1',
+      name: 'Daphne du Maurier',
+      dob: 'May 13, 1907',
+      pob: 'London, England',
+      books: [
+        { id: 1, title: 'Rebecca', year: 1938 },
+      ],
+    });
+  });
+
   afterAll(() => {
     pool.end();
   });
