@@ -8,7 +8,7 @@ describe('books routes', () => {
     return setup(pool);
   });
 
-  it('get /books should return a list of books', async () => {
+  it('#GET /books should return a list of books', async () => {
     const res = await request(app).get('/books');
     expect(res.body.length).toEqual(8);
     const rebecca = res.body.find((book) => book.id === '1');
@@ -16,7 +16,7 @@ describe('books routes', () => {
     expect(rebecca).toHaveProperty('year', 1938);
   });
   
-  it('get /:id should return a book with authors', async () => {
+  it('#GET /:id should return a book with authors', async () => {
     const res = await request(app).get('/books/1');
     expect(res.status).toBe(200);
     expect(res.body).toEqual({
@@ -27,6 +27,13 @@ describe('books routes', () => {
         { id: 1, name: 'Daphne du Maurier', dob: 'May 13, 1907', pob: 'London, England' },
       ],
     });
+  });
+
+  it('#POST /books should create a new book', async () => {
+    const res = await request(app).post('/books').send({ title: 'Where the Sidewalk Ends', year: 1974 });
+    expect(res.status).toBe(200);
+    expect(res.body.title).toBe('Where the Sidewalk Ends');
+    expect(res.body.year).toBe(1974);
   });
 
   afterAll(() => {
