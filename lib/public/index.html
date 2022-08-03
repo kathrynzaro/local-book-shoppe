@@ -8,9 +8,82 @@
   <title>Document</title>
 </head>
 <body>
+
+
+
+ 
+   <main>
+      <h1>Local Book Shoppe</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Route</th>
+            <th>Method</th>
+            <th class="description">Description</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>/books</td>
+            <td>GET</td>
+            <td class="description">Gets a list of books</td>
+            <td class="link">
    <a href="/books">List Books</a>
-   <a href="/authors">List Authors</a>
+            </td>
+          </tr>
+          <tr>
+            <td>/books/:id</td>
+            <td>GET</td>
+            <td>
+              Returns book detail 
+            </td>
+            <td class="link">
    <a href="/books/1">Get Book 1</a>
-   <a href="/authors/1">Get Author 1</a>
+            </td>
+          </tr>
+          <tr>
+            <td>/authors</td>
+            <td>GET</td>
+            <td>
+              Get a list of authors
+            </td>
+            <td class="link">
+   <a href="/authors">List Authors</a>
+            </td>
+          </tr>
+          <tr>
+            <td>/authors/:id</td>
+            <td>GET</td>
+            <td>
+              Returns author detail
+            </td>
+            <td class="link">
+  <a href="/authors/1">Get Author 1</a>
+            </td>
+          </tr>
+          <tr>
+            <td>/books</td>
+            <td>POST</td>
+            <td>
+              Add a book
+            </td>
+            <td class="link">
+
+            </td>
+          </tr>
+          <tr>
+            <td>/authors</td>
+            <td>POST</td>
+            <td>
+              Add an author
+            </td>
+            <td class="link">
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
 </body>
 </html>
